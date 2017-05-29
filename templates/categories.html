@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+	
+	<!-- div class="row banner main">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+			<h1>Categories</h1>
+		</div>
+	</div> -->
+
+	<div class="flash">
+	  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+	</div>
+	
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-offset-1 col-md-6">
+			<a href="{{url_for('newCategory')}}">
+				<button class="btn btn-default" id="new-category">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add Category
+				</button>
+			</a>
+		</div>
+		<div class="col-md-6"></div>
+	</div>	
+	<div class="row">
+		<div class="col-md-offset-1 col-md-3 categorybackground">
+		<h1>Categories</h1>
+		{% for category in categories %}
+			<a href="{{ url_for('showProduct', category_id=category.id) }}">
+				<h3>{{category.name}}</h3>
+			</a>
+		{% endfor %}
+		</div>
+		<div class="col-md-offset-2 col-md-5">
+		<h1>Latest Products</h1>
+		{% for product in latest %}
+				<a href="{{ url_for('viewProduct', category_id=product.category.id, product_id = product.id) }}">
+				<h3>{{ product.name }} <span class="text-muted">({{ product.category.name }})</span></h3></a>
+				<p>{{ product.date }}</p>
+		{% endfor %}
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	
+
+{% endblock %}
