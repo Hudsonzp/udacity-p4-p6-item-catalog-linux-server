@@ -1,14 +1,18 @@
 # Zach's Catalog Project
 
+## Description
+For project 4 we needed to make a basic Item Catalog with CRUD functionality. It also included Google Oauth login.  I utilized the Flask framework with SQLAlchemy and PostgreSQL.  In addition, we need to configure an AWS server manually to deploy this application. From the command line I setup SSH, configured the firewall, updated apps, installed apache, and converted the application from Sqlite to PSQL.
+
+I've since taken down the AWS server that hosted this application.
+
 ## IP address
+NO LONGER ACTIVE:
 - IP address for this project is 52.54.182.182
 - Alternatively the hostname for the project is ec2-52-54-182-182.compute-1.amazonaws.com
 
 ## SSH 
 - As mentioned in the Rubric and notes, this can be reached by the user account specified by the Udacity team.
 - Port of SSH is setup to 2200
-- Thus, SSH access looks like username@52.54.182.182 -i ~/.ssh/credentials_file_here -p 2200
-
 
 ## Software
 There was a lot of software installed to setup this project, both for the server and for the specific application here is a list.
